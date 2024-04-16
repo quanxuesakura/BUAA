@@ -7,5 +7,5 @@
 
 由@quanxuesakura按第三十四届冯如杯创意赛道要求修改后发布，内含本人大一冯如杯创意赛道论文。
 ## 使用方法
-本模板主文件为FRBmain.tex，请使用XeLatex编译。
+本模板主文件为FRBMain.tex，请使用XeLatex编译。
 
