@@ -3,9 +3,12 @@ import numpy as np
 
 # 需要修改的值
 # 测量值(输入示例：x = np.array([1，(10+1)**2，114514，203912049.52131]))
-x = np.array([])
+x = np.array(
+    [-100.8,-97.8,-100.2,-103.0,-103.6
+    ]
+)
 # 测量仪器误差限/精密度/随机误差大小(自行查表输入)
-accuracy = 0.05
+accuracy = 0.5
 
 # 包含因子的值(一般无需修改)
 k = 3 ** (1 / 2)
@@ -29,7 +32,14 @@ for i in range(0, len):
 sx = (delta2 / (len - 1)) ** (1 / 2)
 print("标准误差sigma(x)的估计值=有限次测量的标准误差s(x)=", sx)
 ua = sx_ave = (delta2 / (len * (len - 1))) ** (1 / 2)
-print("不确定度的A类估计Ua(x)=均值的标准(偏)差s(ave_x)=", sx_ave)
+print(
+    "不确定度的A类估计Ua(x)=均值的标准(偏)差s(ave_x)= 根号下",
+    delta2,
+    "/",
+    len * (len - 1),
+    "=",
+    sx_ave,
+)
 ub = accuracy / k
 print("不确定度的B类估计Ub(x)=", ub)
 u = (ua**2 + ub**2) ** (1 / 2)
